@@ -1,0 +1,26 @@
+/*    useEffect(()=>{
+    async function fetchData(){
+        getRedirectResult(auth);
+        const response = await getRedirectResult(auth);
+        
+        if(response){
+            const userDocRef = await
+            createUserDocumentFromAuth(response.user);
+        }
+    }
+       fetchData();
+   }, []); */
+
+    /*    const logGoogleRedirectUser = async() =>{
+        const {user} = await signInWithGoogleRedirect();
+        console.log({user})
+    }; */
+
+
+          {/*   <button onClick = {logGoogleUser}>
+                Sign in with Google Popup
+            </button> */}
+
+         {/*    <button onClick={logGoogleRedirectUser}>
+                Sign in with Google Redirect
+            </button> */}
