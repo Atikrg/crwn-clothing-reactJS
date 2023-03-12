@@ -25,7 +25,16 @@
 
     .quantity {
         display: flex;
+<<<<<<< HEAD
 
+=======
+        .arrow{
+            cursor: pointer;
+        }
+        .value{
+            margin: 0 10px;
+        }
+>>>>>>> 0d08e4635118c284fcf37de181b66e5cbc23379b
         .arrow {
             cursor: pointer;
         }
