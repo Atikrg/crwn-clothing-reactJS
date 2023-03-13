@@ -1,4 +1,4 @@
-import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, setDoc, collection, query, getDocs }from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import {
     getAuth,
@@ -66,13 +66,21 @@ export const createUserDocumentFromAuth =
                 console.log("Error creating the user", error.message);
             }
     }
-    //if user data does not exist
-    // create /set the document with the data from userAtuth in my collection
-    //if user data exists
-
-
+  
     return userDocRef;
 };
+
+export const getCategoriesAndDocuments = async()=>{
+const collectionRef = collection(db, 'categories');
+const q = query(collectionRef);
+const querySnapshot = await getDocs(q);
+const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot)=> { 
+const {title, items} = docSnapshot.data();
+acc[title.toLowerCase()] = items;
+return acc;
+},{});
+return categoryMap;
+}
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
     if (!email || !password) return;
