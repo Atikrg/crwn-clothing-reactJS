@@ -39,11 +39,12 @@ const resetFormFields = () => {
 
             
             await createUserDocumentFromAuth(user, { displayName });
+            alert("User Signed Up")
             resetFormFields();
         } catch (error) {
             if (error.code === 'auth/email-already-in-use') {
                 alert('Cannot create user, email already in use');
-            } else {
+            } else {          
                 console.log("User creation encountered an error", error);
             }
         }

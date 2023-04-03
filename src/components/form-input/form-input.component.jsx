@@ -3,7 +3,6 @@ const FormInput = ({label, ...otherProps})=>{
     return (
         <Group>
             <Input {...otherProps} />       
-
         {label && (
              <FormInputLabel  
                 className={
@@ -18,5 +17,4 @@ const FormInput = ({label, ...otherProps})=>{
         </Group>
     )
 }
-
 export default FormInput;

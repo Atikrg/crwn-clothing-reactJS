@@ -6,7 +6,8 @@ import { UserProvider } from './contexts/user.context'
 import { BrowserRouter } from 'react-router-dom';
 import { CategoriesContext, CategoriesProvider } from './contexts/categories.context';
 import { CartProvider } from './contexts/cart.context';
-
+import {Elements} from '@stripe/react-stripe-js';
+import {stripePromise} from './utils/stripe/stripe.utils';
 
 const rootElement = document.getElementById('root');
 render(
@@ -15,7 +16,9 @@ render(
       <UserProvider>
         <CategoriesProvider>
           <CartProvider>
+          <Elements stripe = {stripePromise}>
             <App />
+          </Elements>
           </CartProvider>
         </CategoriesProvider>
 
