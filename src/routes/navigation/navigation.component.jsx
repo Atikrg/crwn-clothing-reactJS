@@ -21,7 +21,7 @@ import {
 const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectIsCartOpen);
-
+  
   return (
     <Fragment>
       <NavigationContainer>
@@ -29,8 +29,14 @@ const Navigation = () => {
           <CrwnLogo className='logo' />
         </LogoContainer>
         <NavLinks>
+          <p>
+          {
+          currentUser ? (
+              <h1>{currentUser.displayName}</h1>
+            ) : ''
+          } 
+          </p>
           <NavLink to='/shop'>SHOP</NavLink>
-
           {currentUser ? (
             <NavLink as='span' onClick={signOutUser}>
               SIGN OUT

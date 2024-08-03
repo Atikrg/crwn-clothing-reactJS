@@ -9,6 +9,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from 'firebase/auth';
+
 import {
   getFirestore,
   doc,
@@ -20,7 +21,20 @@ import {
   getDocs,
 } from 'firebase/firestore';
 
+
+
 const firebaseConfig = {
+  apiKey: "AIzaSyAdQEHrK6iXK8P6ZM-k4hweGrNJb_pmvhg",
+  authDomain: "crwn-clothing-db-76b60.firebaseapp.com",
+  projectId: "crwn-clothing-db-76b60",
+  storageBucket: "crwn-clothing-db-76b60.appspot.com",
+  messagingSenderId: "1002292830314",
+  appId: "1:1002292830314:web:096202eb1dc31f82722a13",
+  measurementId: "G-Q6GFM7MFYZ"
+};
+
+
+/* const firebaseConfig = {
   apiKey: 'AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk',
   authDomain: 'crwn-clothing-db-98d4d.firebaseapp.com',
   projectId: 'crwn-clothing-db-98d4d',
@@ -28,7 +42,7 @@ const firebaseConfig = {
   messagingSenderId: '626766232035',
   appId: '1:626766232035:web:506621582dab103a4d08d6',
 };
-
+*/
 const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
